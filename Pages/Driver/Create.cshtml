@@ -1,0 +1,59 @@
+﻿@page
+@model WebApplication.Pages.Driver.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Driver</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Driver.Full_Name" class="control-label"></label>
+                <input asp-for="Driver.Full_Name" class="form-control" />
+                <span asp-validation-for="Driver.Full_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Driver.Post_Code" class="control-label"></label>
+                <input asp-for="Driver.Post_Code" class="form-control" />
+                <span asp-validation-for="Driver.Post_Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Driver.Phone_No" class="control-label"></label>
+                <input asp-for="Driver.Phone_No" class="form-control" />
+                <span asp-validation-for="Driver.Phone_No" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Driver.Birth_Date" class="control-label"></label>
+                <input asp-for="Driver.Birth_Date" class="form-control" />
+                <span asp-validation-for="Driver.Birth_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Driver.License_Class" class="control-label"></label>
+                <input asp-for="Driver.License_Class" class="form-control" />
+                <span asp-validation-for="Driver.License_Class" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Driver.Email" class="control-label"></label>
+                <input asp-for="Driver.Email" class="form-control" />
+                <span asp-validation-for="Driver.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

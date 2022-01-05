@@ -1,0 +1,66 @@
+﻿@page
+@model WebApplication.Pages.Driver.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Driver Details</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].Full_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].Post_Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].Phone_No)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].Birth_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].License_Class)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Driver) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Full_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Post_Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone_No)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Birth_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.License_Class)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.License_Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.License_Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.License_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
