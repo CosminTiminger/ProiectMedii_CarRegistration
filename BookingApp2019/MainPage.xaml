@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookingApp2019.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="12" CornerRadius="0">
+            <Label
+                Text="Booking App"
+                HorizontalTextAlignment="Start"
+                TextColor="White"
+                FontSize="28"/>
+        </Frame>
+
+        <StackLayout
+            x:Name="booking_details_view"
+            Margin="16, 8, 16, 0"
+            IsVisible="false"
+            BackgroundColor="AntiqueWhite">
+
+            <Editor
+            x:Name="national_id_field"
+            Margin="16, 16, 16, 0"
+            Placeholder="National ID" />
+
+            <Editor
+            x:Name="name_field"
+            Margin="16, 8, 16, 0"
+            Placeholder="Full Name" />
+
+            <Editor
+            x:Name="location_field"
+            Margin="16, 8, 16, 0"
+            Placeholder="Location" />
+
+            <Editor
+            x:Name="phone_number_field"
+            Margin="16, 8, 16, 0"
+            Placeholder="Phone Number" />
+
+            <Editor
+            x:Name="email_field"
+            Margin="16, 8, 16, 0"
+            Placeholder="Email" />
+
+            <Editor
+            x:Name="date_field"
+            Margin="16, 8, 16, 8"
+            Placeholder="Date" />
+
+        </StackLayout>
+
+        <ListView
+            x:Name="bookings_container"
+            Margin="16, 16, 16, 16"
+            BackgroundColor="AntiqueWhite"
+            ItemTapped="bookings_container_ItemTapped"
+            SelectionMode="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                            Orientation="Horizontal"
+                            Padding="16, 12, 0, 0">
+                            <Label Text="{Binding FullName}" TextColor="Black" />
+                            <Label Text="{Binding BookingDate}" TextColor="Black" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button
+            x:Name="add_button"
+            Clicked="Add_Button_Clicked"
+            Margin="16, 4, 16, 16"
+            BackgroundColor="Blue"
+            TextColor="White"
+            Text="Add Booking"/>
+
+        <Button
+            x:Name="delete_button"
+            IsVisible="false"
+            Clicked="Delete_Button_Clicked"
+            Margin="16, 8, 16, 0"
+            BackgroundColor="Blue"
+            TextColor="White"
+            Text="Delete Booking"/>
+
+        <Button
+            x:Name="update_button"
+            IsVisible="false"
+            Clicked="Update_Button_Clicked"
+            Margin="16, 8, 16, 0"
+            BackgroundColor="Blue"
+            TextColor="White"
+            Text="Update Booking"/>
+
+        <Button
+            x:Name="done_button"
+            IsVisible="false"
+            Clicked="Done_Button_Clicked"
+            Margin="16, 8, 16, 16"
+            BackgroundColor="Blue"
+            TextColor="White"
+            Text="Done"/>
+
+    </StackLayout>
+
+</ContentPage>
